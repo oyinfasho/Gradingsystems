@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-image: linear-gradient(to right, red , yellow);
+    }
+    .fb{
+        height: 200px;
+        width: 400px;
+        background-color: greenyellow;
+        position: relative;
+        left: 400px;
+        top: 150px;
+        
+    }
+    h4{
+        font-size: 50px;
+        text-decoration: underline;
+    }
+    .ot{
+        height: 30px;
+        width: 100px;
+        background-color: black;
+        color: white;
+    }
+    .tt{
+        height: 30px;
+        width: 170px;
+    }
+    .yy{
+        height: 30px;
+        width: 150px;
+        position: relative;
+        left: 70px;
+    }
+
+</style>
+<body>
+    <div class="fb">
+        <marquee behavior="scroll" direction="Right">Welcome to the official Grading System</marquee>
+         <h4>Grading System</h4>
+         <label for="Score">Enter Score</label>
+         <br>
+        <input class="tt" type="number" id="score">
+        <button class="ot"onclick = calculategrade()>Checkgrade</button>
+        <br>
+        <br>
+        <button class="yy" id="result"></button>
+
+    </div>
+
+
+</body>
+<script>
+function calculategrade() {
+    const score = parseFloat(document.getElementById("score").value);
+    if(isNaN(score)) {
+        document.getElementById("result").textcontent ="please enter a value.";
+    }else if (score >=70){
+    document.getElementById("result").textContent ="Excellent😊😍🙌👍"
+}else if (score >=50){
+    document.getElementById("result").textContent ="GOOD🙌😍"
+}else if (score >=40){
+    document.getElementById("result").textContent ="Fair🤦‍♀️😒"
+}else if (score <40){
+    document.getElementById("result").textContent ="Fail😢🤦‍♂️✌️😭"
+}else { 
+    document.getElementById("result").textContent ="Grade not available"
+}
+
+}
+</script>
+</html>
